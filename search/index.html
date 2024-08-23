@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Input</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <input type="text" id="searchinput" placeholder="Search . . .">
+        <button onclick="search()">Submit</button>
+        <p id="result">Tidak mencari data . . .</p>
+
+        <script>
+            function search() {
+                let input = document.getElementById("searchinput").value;
+                let result = document.getElementById("result");
+
+                if (input === "") {
+                    result.innerHTML = "Tidak mencari data . . . ";
+                } else {
+                    result.innerHTML = "Mencari data   " + input + "...";
+                }
+            }
+        </script>
+    </center>
+</body>
+</html>

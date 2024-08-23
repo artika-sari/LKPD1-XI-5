@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form action="">
+            <label for="identitas">
+                <input type="radio" name="identitas" id="h" value="h" onclick="changeLabel(this)">
+                <label for="identitas">Masih Hidup</label><br>
+                <input type="radio" name="identitas" id="m" value="m" onclick="changeLabel(this)">
+                <label for="identitas">Meninggal</label><br>
+                <input type="radio" name="identitas" id="t" value="t" onclick="changeLabel(this)">
+                <label for="identitas">Tidak diketahui</label>
+            </label>
+    </div>
+
+    <div id="pendidikan">
+        <label for="pendidikan">Pendidikan Ayah
+            <select name="pendidikan" id="pendidikan">
+                <option selected disabled hidden>Pilih</option>
+                <option value="">SD</option>
+                <option value="">SMP</option>
+                <option value="">SMA</option>
+                <option value="">D3</option>
+                <option value="">S1</option>
+            </select>
+        </label>
+    </div>
+
+    <div id="pekerjaan">
+        <label for="pekerjaan">Pekerjaan Ayah
+            <select name="pekerjaan" id="pekerjaan">
+                <option selected hidden>Pilih</option>
+                <option value="">Guru</option>
+                <option value="">Pegawai</option>
+                <option value="">Pilot</option>
+            </select>
+        </label>
+    </div>
+
+    <div id="deskripsi">
+        <label for="deskripsi">Deskripsi Pekerjaan Ayah</label>
+        <input type="text">
+    </div>
+
+    <div id="penghasilan">
+        <label for="penghasilan">Total Penghasilan Ayah Per Bulan</label>
+        <input type="text">
+    </div> 
+
+    <div id="wrapper-true">
+        <!-- <label for="wrapper-true">Detail Ayah bekerja, berapa lamasudah bekerja, kondi si kesehatan, dan kondisi karir profesinya</label>
+            <input type="text"> -->
+    </div>
+
+    </form>
+
+    <script>
+        function changeLabel(e) {
+            let pekerjaan = document.getElementById('pekerjaan');
+            let pendidikan = document.getElementById('pendidikan');
+            let penghasilan = document.getElementById('penghasilan');
+            let deskripsi = document.getElementById('deskripsi');
+
+            if (e.value == "h") {
+                document.getElementById('wrapper-true').innerHTML = `<label for="wrapper-true">Detail Ayah bekerja, berapa lamasudah bekerja, kondi si kesehatan, dan kondisi karir profesinya</label>
+            <input type="text">`;
+                pendidikan.style.display = "block";
+                penghasilan.style.display = "block";
+                deskripsi.style.display = "block";
+                pekerjaan.style.display = "block";
+            } else if (e.value == "m") {
+                document.getElementById('wrapper-true').innerHTML = `<label for="wrapper-true">Detail Pekerjaan Ayah Semasa Hidup</label>
+            <input type="text">`;
+                pendidikan.style.display = "block";
+                penghasilan.style.display = "block";
+                deskripsi.style.display = "block";
+                pekerjaan.style.display = "block";
+            } else {
+                document.getElementById('wrapper-true').style.display = "none";
+                pendidikan.style.display = "none";
+                penghasilan.style.display = "none";
+                deskripsi.style.display = "none";
+                pekerjaan.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+</head>
+<body>
+    <button onclick="countdown()">Click me!</button>
+    <div id="countdown"></div>
+    
+    <style>
+      #countdown {
+        background-color: #7e3c3c;
+        color: black;
+        padding: 10px;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: bold;
+        width: 300px;
+        height: 30px;
+        margin-top: 20px;
+      }
+    </style>
+    
+    <script>
+      function countdown() {
+        let count = 5;
+        let interval = setInterval(function() {
+          document.getElementById("countdown").innerHTML = "Danger! Alert akan tertutup dalam: " + count;
+          count--;
+          if (count < 0) {
+            clearInterval(interval);
+            document.getElementById("countdown").innerHTML = "";
+          }
+        }, 1000);
+      }
+    </script>
+
+</body> 
+</html>

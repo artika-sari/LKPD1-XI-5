@@ -1,0 +1,14 @@
+.wrap-card {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: brown
+}
